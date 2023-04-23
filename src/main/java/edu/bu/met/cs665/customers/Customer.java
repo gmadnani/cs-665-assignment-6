@@ -11,9 +11,11 @@ package edu.bu.met.cs665.customers;
 
 public abstract class Customer {
   protected String name;
+  protected CustomerType type;
   
-  public Customer(String name) {
+  public Customer(String name, CustomerType type) {
     this.name = name;
+    this.type = type;
   }
   
   public abstract String getEmailText();
