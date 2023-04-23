@@ -17,4 +17,10 @@ public abstract class Customer {
   }
   
   public abstract String getEmailText();
+  
+  // new method for formatting email text
+  protected String formatEmailText(String text) {
+    return String.format("Dear %s,\n%s", name, text);
+  }
 }
+
