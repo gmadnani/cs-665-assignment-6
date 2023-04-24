@@ -10,6 +10,7 @@
 package edu.bu.met.cs665;
 
 import edu.bu.met.cs665.customers.Customer;
+import edu.bu.met.cs665.customers.CustomerType;
 import edu.bu.met.cs665.emails.EmailFactory;
 import edu.bu.met.cs665.emails.EmailGenerationFactory;
 
@@ -24,19 +25,19 @@ public class Main {
     Main m = new Main();
     EmailFactory emailFactory = new EmailGenerationFactory();
     
-    Customer businessCustomer = emailFactory.createBusinessCustomer("Giri Co.");
+    Customer businessCustomer = emailFactory.createCustomer("Giri Co.", CustomerType.BUSINESS);
     System.out.println(businessCustomer.getEmailText());
     
-    Customer returningCustomer = emailFactory.createReturningCustomer("Giri");
+    Customer returningCustomer = emailFactory.createCustomer("Giri", CustomerType.RETURNING);
     System.out.println(returningCustomer.getEmailText());
     
-    Customer frequentCustomer = emailFactory.createFrequentCustomer("Girish");
+    Customer frequentCustomer = emailFactory.createCustomer("Girish", CustomerType.FREQUENT);
     System.out.println(frequentCustomer.getEmailText());
     
-    Customer newCustomer = emailFactory.createNewCustomer("Girish M.");
+    Customer newCustomer = emailFactory.createCustomer("Girish M.", CustomerType.NEW);
     System.out.println(newCustomer.getEmailText());
     
-    Customer vipCustomer = emailFactory.createVipCustomer("Girish Madnani");
+    Customer vipCustomer = emailFactory.createCustomer("Girish Madnani", CustomerType.VIP);
     System.out.println(vipCustomer.getEmailText());
   }
   
