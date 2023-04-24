@@ -17,7 +17,6 @@ public class BusinessCustomer extends Customer {
   
   @Override
   public String getEmailText() {
-    return String.format("Dear %s,\n"
-        + "This is a custom email specifically for business customers", name);
+    return formatEmailText("This is a custom email specifically for business customers.");
   }
 }

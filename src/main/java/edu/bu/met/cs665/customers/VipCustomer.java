@@ -17,7 +17,6 @@ public class VipCustomer extends Customer {
   
   @Override
   public String getEmailText() {
-    return String.format("Dear %s,\n"
-        + "This is a custom email specifically for vip customers", name);
+    return formatEmailText("This is a custom email specifically for VIP customers.");
   }
 }
