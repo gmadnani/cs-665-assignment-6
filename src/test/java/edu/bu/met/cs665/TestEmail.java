@@ -13,35 +13,35 @@ public class TestEmail {
   public void testBusinessCustomer() {
     Customer customer = new BusinessCustomer("Girish Co.");
     String email = customer.getEmailText();
-    Assert.assertEquals("Dear Girish Co.,\nThis is a custom email specifically for business customers", email);
+    Assert.assertEquals("Dear Girish Co.,\nThis is a custom email specifically for business customers.", email);
   }
   
   @Test
   public void testReturningCustomer() {
     Customer customer = new ReturningCustomer("Girish");
     String email = customer.getEmailText();
-    Assert.assertEquals("Dear Girish,\nThis is a custom email specifically for returning customers", email);
+    Assert.assertEquals("Dear Girish,\nThis is a custom email specifically for returning customers.", email);
   }
   
   @Test
   public void testFrequentCustomer() {
     Customer customer = new FrequentCustomer("Girish");
     String email = customer.getEmailText();
-    Assert.assertEquals("Dear Girish,\nThis is a custom email specifically for frequent customers", email);
+    Assert.assertEquals("Dear Girish,\nThis is a custom email specifically for frequent customers.", email);
   }
   
   @Test
   public void testNewCustomer() {
     Customer customer = new NewCustomer("Girish");
     String email = customer.getEmailText();
-    Assert.assertEquals("Dear Girish,\nThis is a custom email specifically for new customers", email);
+    Assert.assertEquals("Dear Girish,\nThis is a custom email specifically for new customers.", email);
   }
   
   @Test
   public void testVipCustomer() {
     Customer customer = new VipCustomer("Girish");
     String email = customer.getEmailText();
-    Assert.assertEquals("Dear Girish,\nThis is a custom email specifically for vip customers", email);
+    Assert.assertEquals("Dear Girish,\nThis is a custom email specifically for VIP customers.", email);
   }
   
 }

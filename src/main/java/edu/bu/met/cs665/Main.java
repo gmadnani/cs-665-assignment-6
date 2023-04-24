@@ -15,16 +15,13 @@ import edu.bu.met.cs665.emails.EmailFactory;
 import edu.bu.met.cs665.emails.EmailGenerationFactory;
 
 public class Main {
+  private final EmailFactory emailFactory;
   
-  /**
-   * A main method to run examples.
-   *
-   * @param args not used
-   */
-  public static void main(String[] args) {
-    Main m = new Main();
-    EmailFactory emailFactory = new EmailGenerationFactory();
-    
+  public Main(EmailFactory emailFactory) {
+    this.emailFactory = emailFactory;
+  }
+  
+  public void run() {
     Customer businessCustomer = emailFactory.createCustomer("Giri Co.", CustomerType.BUSINESS);
     System.out.println(businessCustomer.getEmailText());
     
@@ -41,4 +38,9 @@ public class Main {
     System.out.println(vipCustomer.getEmailText());
   }
   
+  public static void main(String[] args) {
+    EmailFactory emailFactory = new EmailGenerationFactory();
+    Main m = new Main(emailFactory);
+    m.run();
+  }
 }
