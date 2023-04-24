@@ -12,7 +12,7 @@ package edu.bu.met.cs665.customers;
 public class FrequentCustomer extends Customer {
   
   public FrequentCustomer(String name) {
-    super(name);
+    super(name, CustomerType.FREQUENT);
   }
   
   @Override

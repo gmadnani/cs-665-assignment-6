@@ -12,7 +12,7 @@ package edu.bu.met.cs665.customers;
 public class ReturningCustomer extends Customer {
   
   public ReturningCustomer(String name) {
-    super(name);
+    super(name, CustomerType.RETURNING);
   }
   
   @Override

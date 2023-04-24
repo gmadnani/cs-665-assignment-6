@@ -12,7 +12,7 @@ package edu.bu.met.cs665.customers;
 public class VipCustomer extends Customer {
   
   public VipCustomer(String name) {
-    super(name);
+    super(name, CustomerType.VIP);
   }
   
   @Override
