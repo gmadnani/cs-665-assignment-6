@@ -1,7 +1,7 @@
 /**
  * Name: Girish Madnani
  * Course: CS-665 Software Designs & Patterns
- * Date: 03/16/2023
+ * Date: 04/27/2023
  * File Name: Main.java
  * Description: The Main class provides a main method to run the program and create an
  * email for different customers.
@@ -21,6 +21,9 @@ public class Main {
     this.emailFactory = emailFactory;
   }
   
+  /**
+   * The run method create a customer of that particular type and returns the name.
+   */
   public void run() {
     Customer businessCustomer = emailFactory.createCustomer("Giri Co.", CustomerType.BUSINESS);
     System.out.println(businessCustomer.getEmailText());
@@ -38,6 +41,11 @@ public class Main {
     System.out.println(vipCustomer.getEmailText());
   }
   
+  /**
+   * A main method to run the code.
+   *
+   * @param args not used
+   */
   public static void main(String[] args) {
     EmailFactory emailFactory = new EmailGenerationFactory();
     Main m = new Main(emailFactory);

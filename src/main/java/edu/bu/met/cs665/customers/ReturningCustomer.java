@@ -1,7 +1,7 @@
 /**
  * Name: Girish Madnani
  * Course: CS-665 Software Designs & Patterns
- * Date: 03/16/2023
+ * Date: 04/27/2023
  * File Name: ReturningCustomer.java
  * Description: The ReturningCustomer class provides the returning customer name
  * and the return string for the returning customer email.

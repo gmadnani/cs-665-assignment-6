@@ -1,7 +1,7 @@
 /**
  * Name: Girish Madnani
  * Course: CS-665 Software Designs & Patterns
- * Date: 03/16/2023
+ * Date: 04/27/2023
  * File Name: EmailGenerationFactory.java
  * Description: The EmailGenerationFactory class implements the EmailFactory interface
  * and defines the functions
@@ -18,6 +18,13 @@ import edu.bu.met.cs665.customers.ReturningCustomer;
 import edu.bu.met.cs665.customers.VipCustomer;
 
 public class EmailGenerationFactory implements EmailFactory {
+  /**
+   * The createCustomer method returns the type of customer which takes in the name.
+   *
+   * @param name name
+   * @param type type
+   * @return
+   */
   public Customer createCustomer(String name, CustomerType type) {
     switch (type) {
       case BUSINESS:

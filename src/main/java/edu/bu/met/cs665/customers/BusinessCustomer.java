@@ -1,7 +1,7 @@
 /**
  * Name: Girish Madnani
  * Course: CS-665 Software Designs & Patterns
- * Date: 03/16/2023
+ * Date: 04/27/2023
  * File Name: BusinessCustomer.java
  * Description: The BusinessCustomer class provides the business customer name
  * and the return string for the business customer email.

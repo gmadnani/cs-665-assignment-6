@@ -1,7 +1,7 @@
 /**
  * Name: Girish Madnani
  * Course: CS-665 Software Designs & Patterns
- * Date: 03/16/2023
+ * Date: 04/27/2023
  * File Name: NewCustomer.java
  * Description: The NewCustomer class provides the new customer name
  * and the return string for the new customer email.
