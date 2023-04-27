@@ -1,9 +1,9 @@
 | CS-665       | Software Design & Patterns |
 |--------------|----------------------------|
 | Name         | Girish Madnani             |
-| Date         | 03/16/2023                 |
+| Date         | 04/27/2023                 |
 | Course       | Spring                     |
-| Assignment # | Assignment 3               |
+| Assignment # | Assignment 6               |
 
 # Assignment Overview
 
@@ -18,61 +18,33 @@ customer and print their email messages.
 
 # GitHub Repository Link:
 
-https://github.com/gmadnani/cs-665-assignment-3
+https://github.com/gmadnani/cs-665-assignment-6
 
-# Implementation Description
+# Changes Description
 
-#### Explain the level of flexibility in your implementation, including how new object types can be easily added or removed in the future.
+#### Explain the specific opportunities and the reasoning behind them.
 
-The implementation of the Factory Method design pattern demonstrated in this program is quite flexible and allows for
-easy addition or removal of new object types in the future.
-To add a new object type, all that is required is to create a new subclass of Customer and implement the getEmailText()
-method to return the desired custom email message. Then, a new method would need to be added to the EmailFactory
-interface for creating instances of the new subclass, and the EmailGenerationFactory implementation would need to be
-updated to include a corresponding method for creating instances of the new subclass.
-Similarly, to remove an object type, it would only be necessary to remove the corresponding subclass of Customer, as
-well as the method for creating instances of that subclass in both the EmailFactory interface and the
-EmailGenerationFactory implementation.
-This flexibility is due to the separation of object creation logic into a separate factory class, which allows the
-client code to create objects without needing to know the details of how they are created. This makes it easy to add or
-remove object types in the future, without affecting the rest of the code.
+Use enum for customer types: Instead of creating separate classes for each type of customer (e.g. BusinessCustomer,
+FrequentCustomer, etc.), an enum can be used to represent the different types of customers. This can simplify the code
+and make it more extensible, as new customer types can be easily added without having to create new classes. The
+Customer class can then have a member variable of the enum type to represent the customer type, and the behavior can be
+determined based on the customer type.
 
-#### Discuss the simplicity and understandability of your implementation, ensuring that it is easy for others to read and maintain.
+Remove code duplication: In the getEmailText() method of each Customer subclass, the code for formatting the email text
+is duplicated. This violates the DRY (Don't Repeat Yourself) principle of software development. Instead, the formatting
+logic can be abstracted into a separate method in the Customer abstract class, and each subclass can call that method to
+generate the email text. This way, if the formatting logic needs to be updated in the future, it can be done in one
+place, reducing the risk of bugs, and making maintenance easier.
 
-The implementation of the Factory Method pattern in this program is designed to be simple and easy to understand. The
-classes are well-structured and follow standard Java programming conventions, using meaningful and descriptive names for
-variables, methods, and classes. This approach makes it easy for others to read and maintain the code. Additionally, the
-use of an abstract Customer class and concrete subclasses for each type of customer provides a clear and straightforward
-way to create custom email messages for different customer types. The EmailFactory interface and its implementation in
-the EmailGenerationFactory class are also simple and clear, defining a set of methods to create different types of
-customers. Overall, the implementation of the Factory pattern in this program is designed with readability and
-maintainability in mind, making it easy for others to understand and modify the code as needed.
-
-#### Describe how you have avoided duplicated code and why it is important.
-
-In this implementation of the Factory Method pattern, duplicated code is avoided by utilizing inheritance and
-polymorphism. The Customer class is an abstract base class that defines a common interface and basic functionality for
-all types of customers. Each concrete subclass of Customer then provides custom implementation for specific types of
-customers. By doing this, we avoid the need to duplicate code for common functionality across all the different types of
-customers.
-For example, the getEmailText() method is implemented in the Customer base class and is inherited by all the concrete
-subclasses. Each subclass then overrides the method to provide its own custom implementation for the email message. This
-approach ensures that the code is modular, flexible, and maintainable, as changes to the base class will automatically
-propagate to all the subclasses that inherit from it.
-
-#### If applicable, mention any design patterns you have used and explain why they were chosen.
-
-In this implementation, the Factory Method design pattern is used to create different types of customers based on
-their classification. The EmailFactory interface defines a set of methods for creating different types of customers, and
-the EmailGenerationFactory class provides concrete implementations of these methods to create instances of the
-corresponding customer classes.
-The Factory pattern is chosen in this implementation because it provides a flexible and extensible way to create objects
-based on their classification. It allows us to abstract away the details of object creation and provide a simple
-interface for creating objects of different types. This makes it easier to maintain the code and add new types of
-customers in the future.
-Furthermore, the Factory pattern allows us to decouple the process of object creation from the rest of the code, which
-makes it easier to test and modify the creation process independently. By using this pattern, we can ensure that the
-code is modular, flexible, and maintainable, which are all desirable qualities in software development.
+Dependency Injection (DI): In the current implementation, the Main class is tightly coupled with the
+EmailGenerationFactory class. This makes it hard to test the Main class in isolation or switch to a different
+implementation of the EmailFactory interface if needed.
+To solve this problem, we can use Dependency Injection (DI) to separate the creation of objects from their use. In DI,
+the dependencies of an object are passed to it, rather than being created inside it. This makes it easier to test the
+object in isolation and switch implementations of its dependencies.
+To implement DI, we can modify the Main class to accept an instance of the EmailFactory interface as a constructor
+argument. We can then create an instance of the Main class with a specific implementation of the EmailFactory interface,
+which can be injected into the Main class.
 
 # Maven Commands
 

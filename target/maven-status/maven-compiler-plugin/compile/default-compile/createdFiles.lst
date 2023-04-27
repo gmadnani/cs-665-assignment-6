@@ -1,0 +1,11 @@
+edu/bu/met/cs665/emails/EmailGenerationFactory$1.class
+edu/bu/met/cs665/Main.class
+edu/bu/met/cs665/customers/FrequentCustomer.class
+edu/bu/met/cs665/customers/CustomerType.class
+edu/bu/met/cs665/customers/VipCustomer.class
+edu/bu/met/cs665/customers/ReturningCustomer.class
+edu/bu/met/cs665/emails/EmailGenerationFactory.class
+edu/bu/met/cs665/customers/NewCustomer.class
+edu/bu/met/cs665/customers/BusinessCustomer.class
+edu/bu/met/cs665/customers/Customer.class
+edu/bu/met/cs665/emails/EmailFactory.class
